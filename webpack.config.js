@@ -14,12 +14,28 @@ module.exports = {
   },
 
   module: {
-    rules: [{
-      // 拡張子 .ts の場合
-      test: /\.ts$/,
-      // TypeScript をコンパイルする
-      use: 'ts-loader'
-    }]
+    rules: [
+      {
+        // 拡張子 .ts の場合
+        test: /\.ts$/,
+        // TypeScript をコンパイルする
+        use: 'ts-loader'
+      },
+      // {
+      //   // Sass 用のローダー
+      //   //ローダーの処理対象ファイル（拡張子 .scss や .sass のファイル）
+      //   test: /\.s[ac]ss$/i,
+      //   // または test: /\.(scss|sass|css)$/i, とすれば css も対象にできる
+      //   use: [
+      //     // CSS を出力するローダー
+      //     'style-loader',
+      //     // CSS を CommonJS に変換するローダー
+      //     'css-loader',
+      //     // Sass をコンパイルするローダー
+      //     'sass-loader',
+      //   ],
+      // },
+    ]
   },
   // import 文で .ts ファイルを解決するため
   resolve: {
